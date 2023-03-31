@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Telco Customer Churn Prediction Results</title>
+  </head>
+  <body>
+    <h1>Telco Customer Churn Prediction Results</h1>
+    <br>
+    <h2>Output: {{ output }}</h2>
+    <br>
+    <p>*************************************************</p>
+    <h1>Performance Matrix</h1>
+    <br>
+    <p>Accuracy: {{ results['Accuracy'] }}</p>
+    <p>Confusion Matrix: </p>
+    <table>
+      <tr>
+        <th></th>
+        <th>Actual Negative</th>
+        <th>Actual Positive</th>
+      </tr>
+      <tr>
+        <td>Predicted Negative</td>
+        <td>{{ results['Confusion Matrix'][0][0] }}</td>
+        <td>{{ results['Confusion Matrix'][0][1] }}</td>
+      </tr>
+      <tr>
+        <td>Predicted Positive</td>
+        <td>{{ results['Confusion Matrix'][1][0] }}</td>
+        <td>{{ results['Confusion Matrix'][1][1] }}</td>
+      </tr>
+    </table>
+    <p>Classification Report: </p>
+    <pre>{{ results['Classification Report'] }}</pre>
+  </body>
+</html>
+

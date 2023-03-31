@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Telco Customer Churn Prediction</title>
+</head>
+<body>
+	<h1>Telco Customer Churn Prediction</h1>
+	<form method="POST" action="/predict">
+		<label for="gender">Gender:</label>
+		<select name="gender" id="gender">
+			<option value="Female">Female</option>
+			<option value="Male">Male</option>
+		</select>
+		<br>
+		<label for="SeniorCitizen">Senior Citizen:</label>
+		<select name="SeniorCitizen" id="SeniorCitizen">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</select>
+		<br>
+		<label for="Partner">Partner:</label>
+		<select name="Partner" id="Partner">
+			<option value="No">No</option>
+			<option value="Yes">Yes</option>
+		</select>
+		<br>
+		<label for="Dependents">Dependents:</label>
+		<select name="Dependents" id="Dependents">
+			<option value="No">No</option>
+			<option value="Yes">Yes</option>
+		</select>
+		<br>
+		<label for="tenure">Tenure (months):</label>
+		<input type="text" name="tenure" id="tenure">
+		<br>
+		<label for="PhoneService">Phone Service:</label>
+		<select name="PhoneService" id="PhoneService">
+			<option value="No">No</option>
+			<option value="Yes">Yes</option>
+		</select>
+		<br>
+		<label for="MultipleLines">Multiple Lines:</label>
+		<select name="MultipleLines" id="MultipleLines">
+			<option value="No phone service">No phone service</option>
+			<option value="No">No</option>
+			<option value="Yes">Yes</option>
+		</select>
+		<br>
+		<label for="InternetService">Internet Service:</label>
+		<select name="InternetService" id="InternetService">
+			<option value="No">No</option>
+			<option value="DSL">DSL</option>
+			<option value="Fiber optic">Fiber optic</option>
+		</select>
+		<br>
+		<label for="OnlineSecurity">Online Security:</label>
+		<select name="OnlineSecurity" id="OnlineSecurity">
+			<option value="No internet service">No internet service</option>
+			<option value="No">No</option>
+			<option value="Yes">Yes</option>
+		</select>
+		<br>
+		<label for="OnlineBackup">Online Backup:</label>
+		<select name="OnlineBackup" id="OnlineBackup">
+			<option value="No internet service">No internet service</option>
+			<option value="No">No</option>
+			<option value="Yes">Yes</option>
+		</select>
+		<br>
+		<label for="DeviceProtection">Device Protection:</label>
+		<select name="DeviceProtection" id="DeviceProtection">
+			<option value="No internet service">No internet service</option>
+			<option value="No">No</option>
+			<option value="Yes">Yes</option>
+		</select>
+		<br>
+		<label for="TechSupport">Tech Support:</label>
+		<select name="TechSupport" id="TechSupport">
+			<option value="No internet service">No internet service</option>
+			<option value="No">No</option>
+			<option value="Yes">Yes</option>
+        </select>
+		<br>
+		<label for="StreamingTV">StreamingTV:</label>
+		<select name="StreamingTV" id="StreamingTV">
+			<option value="No internet service">No internet service</option>
+			<option value="No">No</option>
+			<option value="Yes">Yes</option>
+        </select>
+		<br>
+		<label for="StreamingMovies">StreamingMovies:</label>
+		<select name="StreamingMovies" id="StreamingMovies">
+			<option value="No internet service">No internet service</option>
+			<option value="No">No</option>
+			<option value="Yes">Yes</option>
+        </select>
+		<br>
+		<label for="Contract">Contract:</label>
+		<select name="Contract" id="Contract">
+			<option value="month-to-month">month-to-month</option>
+			<option value="one_year">one_year</option>
+			<option value="two_year">two_year</option>
+        </select>
+		<br>
+		<label for="PaperlessBilling">PaperlessBilling:</label>
+		<select name="PaperlessBilling" id="PaperlessBilling">
+			<option value="No">No</option>
+			<option value="Yes">Yes</option>
+        </select>
+		<br>
+		<label for="PaymentMethod">PaymentMethod:</label>
+		<select name="PaymentMethod" id="PaymentMethod">
+			<option value="bank_transfer_(automatic)">bank_transfer_(automatic)</option>
+			<option value="credit_card_(automatic)">credit_card_(automatic)</option>
+			<option value="electronic_check">electronic_check</option>
+            <option value="mailed_check">mailed_check</option>
+        </select>
+		<br>
+		<label for="MonthlyCharges">MonthlyCharges</label>
+		<input type="text" name="MonthlyCharges" id="MonthlyCharges">
+		<br>
+		<label for="TotalCharges">TotalCharges:</label>
+		<input type="text" name="TotalCharges" id="TotalCharges">
+		<br>
+        <input type="submit" value="Predict">
+	</form>
+</body>
+</html>
+        
