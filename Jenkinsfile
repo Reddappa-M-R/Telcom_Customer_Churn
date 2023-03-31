@@ -28,13 +28,13 @@ pipeline {
 
         stage('Docker image') {
             steps {
-                sh 'docker build -t telco_customer_churn:latest .'
+                sh 'docker build -t telcom_customer_churn:latest .'
             }
         }
 
         stage('Docker container and deploy') {
             steps {
-                sh 'docker run -p 8502:8502 --name telco_customer_churn telco_customer_churn:latest'
+                sh 'docker run -p 5000:5000 --name telcom_customer_churn telcom_customer_churn:latest'
             }
         }
     }
