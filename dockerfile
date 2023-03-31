@@ -5,4 +5,4 @@ WORKDIR /usr/app/
 RUN pip install -r requirements.txt
 
 
-CMD ["python3","deploy.py"]
+CMD ["python","deploy.py"]
