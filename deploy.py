@@ -2,7 +2,7 @@
 from flask import Flask, render_template, request
 import pandas as pd
 from sklearn.model_selection import train_test_split
-from sklearn.ensemble import RandomForestClassifier
+from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
 import joblib
 
@@ -10,9 +10,12 @@ import joblib
 app = Flask(__name__)
 
 model = joblib.load('model.pkl')
+scaler = joblib.load('scaler.pkl')
+
 Model = model
 X_test = pd.read_csv('X_test.csv')
 y_test = pd.read_csv('y_test.csv')
+X_test = scaler.transform(X_test)
 
 # Define function to train and evaluate the model
 def test(X_test, y_test):
@@ -55,11 +58,10 @@ def index():
     PaperlessBilling = request.form['PaperlessBilling']
     PaymentMethod = request.form['PaymentMethod']
     MonthlyCharges = request.form['MonthlyCharges']
-    TotalCharges = request.form['TotalCharges']
 
-    data = [[gender, SeniorCitizen, Partner, Dependents, tenure, PhoneService, MultipleLines, InternetService, OnlineSecurity, OnlineBackup, DeviceProtection, TechSupport, StreamingTV, StreamingMovies, Contract, PaperlessBilling, PaymentMethod, MonthlyCharges, TotalCharges]]
+    data = [[gender, SeniorCitizen, Partner, Dependents, tenure, PhoneService, MultipleLines, InternetService, OnlineSecurity, OnlineBackup, DeviceProtection, TechSupport, StreamingTV, StreamingMovies, Contract, PaperlessBilling, PaymentMethod, MonthlyCharges]]
     
-    x_test = pd.DataFrame(data, columns = ['gender', 'SeniorCitizen', 'Partner', 'Dependents', 'tenure', 'PhoneService', 'MultipleLines', 'InternetService', 'OnlineSecurity', 'OnlineBackup', 'DeviceProtection', 'TechSupport', 'StreamingTV', 'StreamingMovies', 'Contract', 'PaperlessBilling', 'PaymentMethod', 'MonthlyCharges', 'TotalCharges'])
+    x_test = pd.DataFrame(data, columns = ['gender', 'SeniorCitizen', 'Partner', 'Dependents', 'tenure', 'PhoneService', 'MultipleLines', 'InternetService', 'OnlineSecurity', 'OnlineBackup', 'DeviceProtection', 'TechSupport', 'StreamingTV', 'StreamingMovies', 'Contract', 'PaperlessBilling', 'PaymentMethod', 'MonthlyCharges'])
 
     
     

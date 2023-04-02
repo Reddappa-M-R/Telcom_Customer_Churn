@@ -1,7 +1,7 @@
 import pandas as pd
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix
 import joblib
-
+from sklearn.preprocessing import StandardScaler
 # Load the test set
 X_test = pd.read_csv('X_test.csv')
 y_test = pd.read_csv('y_test.csv')
@@ -9,6 +9,7 @@ y_test = pd.read_csv('y_test.csv')
 
 # Load the trained model
 clf = joblib.load('model.pkl')
+scaler = joblib.load('scaler.pkl')
 
 # Preprocess the test set
 #X_test = pd.get_dummies(X_test, columns=['gender', 'Partner', 'Dependents', 'PhoneService', 'MultipleLines',
@@ -17,6 +18,7 @@ clf = joblib.load('model.pkl')
 #                                           'PaymentMethod'])
 
 # Make predictions on the test set
+X_test = scaler.transform(X_test)
 y_pred = clf.predict(X_test)
 
 # Evaluate the performance of the model

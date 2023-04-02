@@ -5,6 +5,7 @@
 </head>
 <body>
 	<h1>Telco Customer Churn Prediction</h1>
+	<h2>***************************************</h2>
 	<form method="POST" action="/predict">
 		<label for="gender">Gender:</label>
 		<select name="gender" id="gender">
@@ -119,11 +120,13 @@
 		<label for="MonthlyCharges">MonthlyCharges</label>
 		<input type="text" name="MonthlyCharges" id="MonthlyCharges">
 		<br>
-		<label for="TotalCharges">TotalCharges:</label>
-		<input type="text" name="TotalCharges" id="TotalCharges">
-		<br>
         <input type="submit" value="Predict">
 	</form>
+	<br>
+	<br>
+	<h2>*************************************************</h2>
+	<h2>Output: {{ output }}</h2>
+	<h2>*************************************************</h2>
 </body>
 </html>
         
